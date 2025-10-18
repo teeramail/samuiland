@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koh Samui Properties – Sale & Long-Term Lease | Samui Home</title>
+  <meta name="description" content="Curated beachfront and hillside properties in Koh Samui. Sale or long-term lease. Thai/English. Contact via WhatsApp or phone.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://samuihome.com/">
+  <link rel="icon" href="/favicon.ico">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Koh Samui Properties – Sale & Long-Term Lease | Samui Home">
+  <meta property="og:description" content="Curated beachfront and hillside properties in Koh Samui. Sale or long-term lease. Thai/English. Contact via WhatsApp or phone.">
+  <meta property="og:url" content="https://samuihome.com/">
+  <meta property="og:image" content="https://samuihome.com/public/img/plot1.svg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Koh Samui Properties – Sale & Long-Term Lease | Samui Home">
+  <meta name="twitter:description" content="Curated beachfront and hillside properties in Koh Samui. Sale or long-term lease. Thai/English. Contact via WhatsApp or phone.">
+  <meta name="twitter:image" content="https://samuihome.com/public/img/plot1.svg">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Agent Tracking Script -->
+  <script>
+    (function() {
+      // Save agent/utm_source/ref to localStorage
+      const params = new URLSearchParams(window.location.search);
+      const agent = params.get('agent') || params.get('utm_source') || params.get('ref');
+      if (agent) {
+        localStorage.setItem('agent', agent);
+      }
+      
+      // Function to append agent to URLs
+      function appendAgent(url) {
+        const savedAgent = localStorage.getItem('agent');
+        if (!savedAgent) return url;
+        
+        try {
+          const urlObj = new URL(url, window.location.origin);
+          if (urlObj.protocol === 'tel:' || urlObj.protocol === 'mailto:') {
+            return url;
+          }
+          if (urlObj.hostname === 'wa.me' || urlObj.hostname === 'api.whatsapp.com') {
+            return url; // WhatsApp handled separately
+          }
+          urlObj.searchParams.set('agent', savedAgent);
+          return urlObj.toString();
+        } catch {
+          return url;
+        }
+      }
+      
+      // Apply agent tracking to all links on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedAgent = localStorage.getItem('agent');
+        
+        document.querySelectorAll('a').forEach(link => {
+          const href = link.getAttribute('href');
+          if (!href) return;
+          
+          // Handle WhatsApp links specially
+          if (href.includes('wa.me') || href.includes('whatsapp')) {
+            const defaultMsg = encodeURIComponent('Hi, I am interested in your Koh Samui properties');
+            const agentSuffix = savedAgent ? encodeURIComponent(` (agent=${savedAgent})`) : '';
+            
+            if (href.includes('?text=')) {
+              if (savedAgent && !href.includes('agent=')) {
+                link.href = href + agentSuffix;
+              }
+            } else if (!href.includes('?text=')) {
+              link.href = href + '?text=' + defaultMsg + agentSuffix;
+            }
+          } 
+          // Handle internal links and detail pages
+          else if (href.startsWith('/') || href.startsWith('./') || href.includes(window.location.hostname)) {
+            link.href = appendAgent(href);
+          }
+        });
+      });
+    })();
+  </script>
+</head>
+<body class="bg-gray-50">
+  
+  <!-- Header -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900">Samui Home</h1>
+          <p class="text-sm text-gray-600">เกาะสมุย • Koh Samui Properties</p>
+        </div>
+        <div class="flex gap-4">
+          <a href="tel:+66815350971" class="text-blue-600 hover:text-blue-800 font-medium">📞 Call</a>
+          <a href="https://wa.me/66810608540" class="text-green-600 hover:text-green-800 font-medium">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-3">Koh Samui – Featured Properties</h1>
+      <p class="text-xl text-blue-100">ขาย/เช่ายาว</p>
+      <p class="mt-4 text-lg text-blue-50 max-w-2xl mx-auto">Curated beachfront and hillside land. Sale or long-term lease options available.</p>
+    </div>
+  </section>
+
+  <!-- Properties Grid -->
+  <section class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- Property 1: Plailaem Beachfront -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="/public/img/plot1.svg" alt="Plailaem Beachfront" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Plailaem Beachfront • ~2 Rai</h3>
+          <ul class="text-gray-700 space-y-2 mb-4">
+            <li>• Quiet sunset beach near Bophut</li>
+            <li>• Chanote title</li>
+            <li>• Electric & city water available</li>
+          </ul>
+          <div class="flex flex-col gap-2">
+            <a href="/properties/plailaem-beachfront.html" class="block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Details</a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/66810608540" class="block text-center bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm">WhatsApp</a>
+              <a href="tel:+66815350971" class="block text-center bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">Call</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 2: Chaweng Seaview -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="/public/img/plot2.svg" alt="Chaweng Seaview Hillside" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Chaweng Seaview Hillside</h3>
+          <ul class="text-gray-700 space-y-2 mb-4">
+            <li>• Panoramic city + ocean view</li>
+            <li>• Gentle slope</li>
+            <li>• Road access</li>
+          </ul>
+          <div class="flex flex-col gap-2">
+            <a href="/properties/chaweng-seaview.html" class="block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Details</a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/66810608540" class="block text-center bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm">WhatsApp</a>
+              <a href="tel:+66815350971" class="block text-center bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">Call</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 3: Bophut Hillside -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="/public/img/plot3.svg" alt="Bophut Hillside" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Bophut Hillside • ~1 Rai</h3>
+          <ul class="text-gray-700 space-y-2 mb-4">
+            <li>• Near Fisherman's Village</li>
+            <li>• Great night views</li>
+            <li>• Utilities nearby</li>
+          </ul>
+          <div class="flex flex-col gap-2">
+            <a href="/properties/bophut-hillside.html" class="block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Details</a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/66810608540" class="block text-center bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm">WhatsApp</a>
+              <a href="tel:+66815350971" class="block text-center bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">Call</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 4: Mae Nam Garden -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="/public/img/plot4.svg" alt="Mae Nam Garden Plot" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Mae Nam Garden Plot</h3>
+          <ul class="text-gray-700 space-y-2 mb-4">
+            <li>• Green, private location</li>
+            <li>• Easy access</li>
+            <li>• Suitable for a villa</li>
+          </ul>
+          <div class="flex flex-col gap-2">
+            <a href="/properties/maenam-garden.html" class="block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Details</a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/66810608540" class="block text-center bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm">WhatsApp</a>
+              <a href="tel:+66815350971" class="block text-center bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">Call</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 5: Bangrak Access -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="/public/img/plot5.svg" alt="Bangrak Access Plot" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Bangrak Access Plot</h3>
+          <ul class="text-gray-700 space-y-2 mb-4">
+            <li>• Close to pier and shops</li>
+            <li>• Convenient location</li>
+            <li>• Great accessibility</li>
+          </ul>
+          <div class="flex flex-col gap-2">
+            <a href="/properties/bangrak-access.html" class="block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Details</a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/66810608540" class="block text-center bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm">WhatsApp</a>
+              <a href="tel:+66815350971" class="block text-center bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">Call</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 mb-6">
+        <div>
+          <h3 class="font-bold text-lg mb-3">Samui Home</h3>
+          <p class="text-gray-300 text-sm">Your trusted partner for Koh Samui property sales and long-term leases.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-3">Contact</h3>
+          <p class="text-gray-300 text-sm">Phone: <a href="tel:+66815350971" class="hover:text-blue-300">+66 81 535 0971</a></p>
+          <p class="text-gray-300 text-sm">WhatsApp: <a href="https://wa.me/66810608540" class="hover:text-green-300">+66 81 060 8540</a></p>
+          <p class="text-gray-300 text-sm">Email: <a href="mailto:teeramail@gmail.com" class="hover:text-blue-300">teeramail@gmail.com</a></p>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-3">Legal</h3>
+          <p class="text-gray-300 text-sm">All properties subject to availability.</p>
+          <p class="text-gray-300 text-sm mt-2">Prices may change; check <a href="https://samuihome.com" class="hover:text-blue-300">samuihome.com</a></p>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Samui Home • Prices may change; check samuihome.com</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
