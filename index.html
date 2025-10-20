@@ -1,213 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Koh Samui Properties – Sale & Long-Term Lease | Samui Home</title>
-  <meta name="description" content="Curated beachfront and hillside properties in Koh Samui. Sale or long-term lease. Thai/English. Contact via WhatsApp or phone.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://samuihome.com/">
-  <link rel="icon" href="/favicon.ico">
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Koh Samui Properties – Sale & Long-Term Lease | Samui Home">
-  <meta property="og:description" content="Curated beachfront and hillside properties in Koh Samui. Sale or long-term lease. Thai/English. Contact via WhatsApp or phone.">
-  <meta property="og:url" content="https://samuihome.com/">
-  <meta property="og:image" content="https://samuihome.com/public/img/plot1.svg">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Koh Samui Properties – Sale & Long-Term Lease | Samui Home">
-  <meta name="twitter:description" content="Curated beachfront and hillside properties in Koh Samui. Sale or long-term lease. Thai/English. Contact via WhatsApp or phone.">
-  <meta name="twitter:image" content="https://samuihome.com/public/img/plot1.svg">
-  
-  <!-- Tailwind CSS CDN -->
+  <meta name="description" content="Curated beachfront and hillside properties in Koh Samui. Sale or long-term lease. Contact via WhatsApp or phone." />
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Agent Tracking Script -->
-  <script>
-    (function() {
-      // Save agent/utm_source/ref to localStorage
-      const params = new URLSearchParams(window.location.search);
-      const agent = params.get('agent') || params.get('utm_source') || params.get('ref');
-      if (agent) {
-        localStorage.setItem('agent', agent);
+  <style>
+    @media (max-width: 768px) {
+      html {
+        scroll-padding-top: 80px;
       }
-      
-      // Function to append agent to URLs
-      function appendAgent(url) {
-        const savedAgent = localStorage.getItem('agent');
-        if (!savedAgent) return url;
-        
-        try {
-          const urlObj = new URL(url, window.location.origin);
-          if (urlObj.protocol === 'tel:' || urlObj.protocol === 'mailto:') {
-            return url;
-          }
-          if (urlObj.hostname === 'wa.me' || urlObj.hostname === 'api.whatsapp.com') {
-            return url; // WhatsApp handled separately
-          }
-          urlObj.searchParams.set('agent', savedAgent);
-          return urlObj.toString();
-        } catch {
-          return url;
-        }
-      }
-      
-      // Apply agent tracking to all links on page load
-      document.addEventListener('DOMContentLoaded', function() {
-        const savedAgent = localStorage.getItem('agent');
-        
-        document.querySelectorAll('a').forEach(link => {
-          const href = link.getAttribute('href');
-          if (!href) return;
-          
-          // Handle WhatsApp links specially
-          if (href.includes('wa.me') || href.includes('whatsapp')) {
-            const defaultMsg = encodeURIComponent('Hi, I am interested in your Koh Samui properties');
-            const agentSuffix = savedAgent ? encodeURIComponent(` (agent=${savedAgent})`) : '';
-            
-            if (href.includes('?text=')) {
-              if (savedAgent && !href.includes('agent=')) {
-                link.href = href + agentSuffix;
-              }
-            } else if (!href.includes('?text=')) {
-              link.href = href + '?text=' + defaultMsg + agentSuffix;
-            }
-          } 
-          // Handle internal links and detail pages
-          else if (href.startsWith('/') || href.startsWith('./') || href.includes(window.location.hostname)) {
-            link.href = appendAgent(href);
-          }
-        });
-      });
-    })();
-  </script>
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
-  
-  <!-- Header -->
-  <header class="bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header - Compact on mobile -->
+  <header class="bg-white shadow-sm sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 py-4 sm:py-6 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center">
-        <div>
-          <h1 class="text-3xl font-bold text-gray-900">Samui Home</h1>
-          <p class="text-sm text-gray-600">เกาะสมุย • Koh Samui Properties</p>
-        </div>
-        <div class="flex gap-4">
+        <a href="/" class="inline-block">
+          <h1 class="text-2xl sm:text-3xl font-bold">Samui Home</h1>
+          <p class="text-xs sm:text-sm text-gray-600">Koh Samui Properties</p>
+        </a>
+        <nav class="hidden sm:flex gap-4">
           <a href="tel:+66815350971" class="text-blue-600 hover:text-blue-800 font-medium">📞 Call</a>
-          <a href="https://wa.me/66810608540" class="text-green-600 hover:text-green-800 font-medium">💬 WhatsApp</a>
-        </div>
+          <a href="https://wa.me/66810608540" class="text-green-600 hover:text-green-800 font-medium" target="_blank">💬 WhatsApp</a>
+        </nav>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+  <!-- Hero - Mobile optimized -->
+  <section class="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-10 sm:py-14">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-3">Koh Samui – Featured Properties</h1>
-      <p class="text-xl text-blue-100">ขาย/เช่ายาว</p>
-      <p class="mt-4 text-lg text-blue-50 max-w-2xl mx-auto">Curated beachfront and hillside land. Sale or long-term lease options available.</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 leading-tight">Koh Samui<br class="sm:hidden"> Properties</h2>
+      <p class="mt-3 text-base md:text-lg text-blue-100 max-w-2xl mx-auto px-2">
+        Curated beachfront and hillside land. Sale or long-term lease options.
+      </p>
+
+      <!-- Desktop CTAs -->
+      <div class="hidden sm:flex mt-6 flex-col items-stretch gap-3 sm:flex-row sm:justify-center sm:gap-4">
+        <a href="#content"
+           class="inline-flex items-center justify-center rounded-xl bg-white/95 text-blue-800 font-semibold px-5 py-3 shadow hover:bg-white transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16v2H4zM4 11h16v2H4zM4 16h16v2H4z"/></svg>
+          Browse Properties
+        </a>
+        <a href="https://wa.me/66810608540"
+           class="inline-flex items-center justify-center rounded-xl bg-green-600 text-white font-semibold px-5 py-3 shadow hover:bg-green-700 transition"
+           target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 32 32" fill="currentColor"><path d="M19.11 17.42c-.24-.12-1.41-.7-1.63-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.17-1.39-1.31-1.63-.14-.24-.02-.37.1-.49l.6-.75c.08-.14.04-.26-.02-.38-.29-.6-.9-2.03-1.28-2.02-.92-.02-1.74.77-1.74 2.04 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64 1.22.52 2.17.61 2.96.52.48-.07 1.41-.58 1.61-1.15.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <!-- Mobile: Scroll indicator -->
+      <div class="sm:hidden mt-8">
+        <a href="#content" class="inline-block animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Properties Grid -->
-  <section class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      
-      <!-- Property 1: Plailaem Beachfront -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-        <img src="/public/img/plot1.svg" alt="Plailaem Beachfront" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Plailaem Beachfront • ~2 Rai</h3>
-          <ul class="text-gray-700 space-y-2 mb-4">
-            <li>• Quiet sunset beach near Bophut</li>
-            <li>• Chanote title</li>
-            <li>• Electric & city water available</li>
+  <!-- Properties Grid - Mobile spacing optimized -->
+  <main id="content" class="max-w-7xl mx-auto px-4 py-8 sm:py-12 sm:px-6 lg:px-8 pb-28 sm:pb-12">
+    <div class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Property 1 -->
+      <article class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <a href="/properties/plailaem-beachfront.html">
+          <div class="relative">
+            <img src="/public/img/plailaem_beach_kohsamui.webp" alt="Plailaem Beachfront" class="w-full h-56 sm:h-48 object-cover" loading="lazy">
+            <div class="absolute top-3 right-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+              ~2 Rai
+            </div>
+          </div>
+        </a>
+        <div class="p-5 sm:p-6">
+          <h4 class="text-xl sm:text-xl font-bold mb-3">Plailaem Beachfront</h4>
+          <ul class="text-gray-700 space-y-2 mb-5 text-sm sm:text-base">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>stunning private beach</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>Glorious sunset view</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>Electric & city water available</span>
+            </li>
           </ul>
-          <div class="flex flex-col gap-2">
-            <a href="/properties/plailaem-beachfront.html" class="block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Details</a>
-            <div class="grid grid-cols-2 gap-2">
-              <a href="https://wa.me/66810608540" class="block text-center bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm">WhatsApp</a>
-              <a href="tel:+66815350971" class="block text-center bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">Call</a>
+          <div class="flex flex-col gap-2.5">
+            <a href="/properties/plailaem-beachfront.html"
+               class="inline-flex items-center justify-center w-full rounded-xl bg-blue-600 text-white px-4 py-3 font-semibold hover:bg-blue-700 transition text-sm sm:text-base">
+               View Details
+            </a>
+            <div class="grid grid-cols-2 gap-2.5">
+              <a href="https://wa.me/66810608540"
+                 class="inline-flex items-center justify-center rounded-xl bg-green-600 text-white px-3 py-2.5 font-medium hover:bg-green-700 transition text-sm"
+                 target="_blank">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" viewBox="0 0 32 32" fill="currentColor"><path d="M19.11 17.42c-.24-.12-1.41-.7-1.63-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.17-1.39-1.31-1.63-.14-.24-.02-.37.1-.49l.6-.75c.08-.14.04-.26-.02-.38-.29-.6-.9-2.03-1.28-2.02-.92-.02-1.74.77-1.74 2.04 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64 1.22.52 2.17.61 2.96.52.48-.07 1.41-.58 1.61-1.15.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/></svg>
+                 WhatsApp
+              </a>
+              <a href="tel:+66815350971"
+                 class="inline-flex items-center justify-center rounded-xl bg-gray-700 text-white px-3 py-2.5 font-medium hover:bg-gray-800 transition text-sm">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C11.85 21 3 12.15 3 1a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2z"/></svg>
+                 Call
+              </a>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- Property 2: Chaweng Seaview -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-        <img src="/public/img/plot2.svg" alt="Chaweng Seaview Hillside" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Chaweng Seaview Hillside</h3>
-          <ul class="text-gray-700 space-y-2 mb-4">
-            <li>• Panoramic city + ocean view</li>
-            <li>• Gentle slope</li>
-            <li>• Road access</li>
+      <!-- Property 2 -->
+      <article class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <a href="/properties/chaweng-seaview.html">
+          <div class="relative">
+            <img src="/public/img/chaweng_seaview.webp" alt="Chaweng Seaview Hillside" class="w-full h-56 sm:h-48 object-cover" loading="lazy">
+            <div class="absolute top-3 right-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+              Sea View
+            </div>
+          </div>
+        </a>
+        <div class="p-5 sm:p-6">
+          <h4 class="text-xl sm:text-xl font-bold mb-3">Chaweng Seaview Hillside</h4>
+          <ul class="text-gray-700 space-y-2 mb-5 text-sm sm:text-base">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>Panoramic city + ocean view</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>Gentle slope</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>Road access</span>
+            </li>
           </ul>
-          <div class="flex flex-col gap-2">
-            <a href="/properties/chaweng-seaview.html" class="block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Details</a>
-            <div class="grid grid-cols-2 gap-2">
-              <a href="https://wa.me/66810608540" class="block text-center bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm">WhatsApp</a>
-              <a href="tel:+66815350971" class="block text-center bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">Call</a>
+          <div class="flex flex-col gap-2.5">
+            <a href="/properties/chaweng-seaview.html"
+               class="inline-flex items-center justify-center w-full rounded-xl bg-blue-600 text-white px-4 py-3 font-semibold hover:bg-blue-700 transition text-sm sm:text-base">
+               View Details
+            </a>
+            <div class="grid grid-cols-2 gap-2.5">
+              <a href="https://wa.me/66810608540"
+                 class="inline-flex items-center justify-center rounded-xl bg-green-600 text-white px-3 py-2.5 font-medium hover:bg-green-700 transition text-sm"
+                 target="_blank">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" viewBox="0 0 32 32" fill="currentColor"><path d="M19.11 17.42c-.24-.12-1.41-.7-1.63-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.17-1.39-1.31-1.63-.14-.24-.02-.37.1-.49l.6-.75c.08-.14.04-.26-.02-.38-.29-.6-.9-2.03-1.28-2.02-.92-.02-1.74.77-1.74 2.04 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64 1.22.52 2.17.61 2.96.52.48-.07 1.41-.58 1.61-1.15.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/></svg>
+                 WhatsApp
+              </a>
+              <a href="tel:+66815350971"
+                 class="inline-flex items-center justify-center rounded-xl bg-gray-700 text-white px-3 py-2.5 font-medium hover:bg-gray-800 transition text-sm">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C11.85 21 3 12.15 3 1a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2z"/></svg>
+                 Call
+              </a>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
-
-
-      <!-- Property 4: Mae Nam Garden -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-        <img src="/public/img/plot4.svg" alt="Mae Nam Garden Plot" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Mae Nam Garden Plot</h3>
-          <ul class="text-gray-700 space-y-2 mb-4">
-            <li>• Green, private location</li>
-            <li>• Easy access</li>
-            <li>• Suitable for a villa</li>
+      <!-- Property 3 -->
+      <article class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <a href="/properties/lipanoi-villa.html">
+          <div class="relative">
+            <img src="/public/img/lipano_beach.webp" alt="Mae Nam Garden Plot" class="w-full h-56 sm:h-48 object-cover" loading="lazy">
+            <div class="absolute top-3 right-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+              Garden
+            </div>
+          </div>
+        </a>
+        <div class="p-5 sm:p-6">
+          <h4 class="text-xl sm:text-xl font-bold mb-3">Mae Nam Garden Plot</h4>
+          <ul class="text-gray-700 space-y-2 mb-5 text-sm sm:text-base">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>Green, private location</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>Easy access</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>Ideal for a villa</span>
+            </li>
           </ul>
-          <div class="flex flex-col gap-2">
-            <a href="/properties/maenam-garden.html" class="block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Details</a>
-            <div class="grid grid-cols-2 gap-2">
-              <a href="https://wa.me/66810608540" class="block text-center bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm">WhatsApp</a>
-              <a href="tel:+66815350971" class="block text-center bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">Call</a>
+          <div class="flex flex-col gap-2.5">
+            <a href="/properties/lipanoi-villa.html"
+               class="inline-flex items-center justify-center w-full rounded-xl bg-blue-600 text-white px-4 py-3 font-semibold hover:bg-blue-700 transition text-sm sm:text-base">
+               View Details
+            </a>
+            <div class="grid grid-cols-2 gap-2.5">
+              <a href="https://wa.me/66810608540"
+                 class="inline-flex items-center justify-center rounded-xl bg-green-600 text-white px-3 py-2.5 font-medium hover:bg-green-700 transition text-sm"
+                 target="_blank">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" viewBox="0 0 32 32" fill="currentColor"><path d="M19.11 17.42c-.24-.12-1.41-.7-1.63-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.17-1.39-1.31-1.63-.14-.24-.02-.37.1-.49l.6-.75c.08-.14.04-.26-.02-.38-.29-.6-.9-2.03-1.28-2.02-.92-.02-1.74.77-1.74 2.04 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64 1.22.52 2.17.61 2.96.52.48-.07 1.41-.58 1.61-1.15.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/></svg>
+                 WhatsApp
+              </a>
+              <a href="tel:+66815350971"
+                 class="inline-flex items-center justify-center rounded-xl bg-gray-700 text-white px-3 py-2.5 font-medium hover:bg-gray-800 transition text-sm">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C11.85 21 3 12.15 3 1a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2z"/></svg>
+                 Call
+              </a>
             </div>
           </div>
         </div>
-      </div>
-
+      </article>
 
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-8 mt-12">
+  <footer class="bg-gray-900 text-white py-8 sm:py-10 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-8 mb-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
         <div>
-          <h3 class="font-bold text-lg mb-3">Samui Home</h3>
-          <p class="text-gray-300 text-sm">Your trusted partner for Koh Samui property sales and long-term leases.</p>
+          <h5 class="font-bold text-lg mb-2 sm:mb-3">Samui Home</h5>
+          <p class="text-gray-300 text-sm leading-relaxed">Your trusted partner for Koh Samui property sales and long-term leases.</p>
         </div>
         <div>
-          <h3 class="font-bold text-lg mb-3">Contact</h3>
-          <p class="text-gray-300 text-sm">Phone: <a href="tel:+66815350971" class="hover:text-blue-300">+66 81 535 0971</a></p>
-          <p class="text-gray-300 text-sm">WhatsApp: <a href="https://wa.me/66810608540" class="hover:text-green-300">+66 81 060 8540</a></p>
-          <p class="text-gray-300 text-sm">Email: <a href="mailto:teeramail@gmail.com" class="hover:text-blue-300">teeramail@gmail.com</a></p>
+          <h5 class="font-bold text-lg mb-2 sm:mb-3">Contact</h5>
+          <div class="space-y-1 text-sm">
+            <p class="text-gray-300">Phone: <a href="tel:+66815350971" class="hover:text-blue-400 transition">+66 81 535 0971</a></p>
+            <p class="text-gray-300">WhatsApp: <a href="https://wa.me/66810608540" class="hover:text-green-400 transition" target="_blank">+66 81 060 8540</a></p>
+            <p class="text-gray-300">Email: <a href="mailto:teeramail@gmail.com" class="hover:text-blue-400 transition">teeramail@gmail.com</a></p>
+          </div>
         </div>
-        <div>
-          <h3 class="font-bold text-lg mb-3">Legal</h3>
-          <p class="text-gray-300 text-sm">All properties subject to availability.</p>
-          <p class="text-gray-300 text-sm mt-2">Prices may change; check <a href="https://samuihome.com" class="hover:text-blue-300">samuihome.com</a></p>
+        <div class="sm:col-span-2 lg:col-span-1">
+          <h5 class="font-bold text-lg mb-2 sm:mb-3">Legal</h5>
+          <p class="text-gray-300 text-sm leading-relaxed">All properties subject to availability. Prices may change.</p>
         </div>
       </div>
-      <div class="border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
-        <p>&copy; <script>document.write(new Date().getFullYear())</script> Samui Home • Prices may change; check samuihome.com</p>
+      <div class="border-t border-gray-800 pt-4 sm:pt-6 text-center text-gray-400 text-xs sm:text-sm">
+        <p>&copy; 2025 Samui Home • All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Mobile sticky action bar -->
+  <div class="fixed inset-x-0 bottom-0 z-50 md:hidden bg-white border-t border-gray-200 shadow-lg"
+       style="padding-bottom: max(env(safe-area-inset-bottom), 12px);">
+    <div class="px-4 py-3">
+      <div class="grid grid-cols-2 gap-3">
+        <a href="https://wa.me/66810608540"
+           class="inline-flex items-center justify-center rounded-xl bg-green-600 text-white px-4 py-3.5 font-semibold shadow-md active:scale-95 transition-transform"
+           target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 32 32" fill="currentColor"><path d="M19.11 17.42c-.24-.12-1.41-.7-1.63-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.17-1.39-1.31-1.63-.14-.24-.02-.37.1-.49l.6-.75c.08-.14.04-.26-.02-.38-.29-.6-.9-2.03-1.28-2.02-.92-.02-1.74.77-1.74 2.04 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64 1.22.52 2.17.61 2.96.52.48-.07 1.41-.58 1.61-1.15.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/></svg>
+          WhatsApp
+        </a>
+        <a href="tel:+66815350971"
+           class="inline-flex items-center justify-center rounded-xl bg-blue-600 text-white px-4 py-3.5 font-semibold shadow-md active:scale-95 transition-transform">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C11.85 21 3 12.15 3 1a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2z"/></svg>
+          Call Now
+        </a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
-
