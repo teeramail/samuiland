@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "build": "rm -rf .vercel/output && mkdir -p .vercel/output/static && cp -R * .vercel/output/static && printf '{\"version\":3}' > .vercel/output/config.json"
+  }
+}
