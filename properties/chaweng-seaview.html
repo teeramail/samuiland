@@ -2,14 +2,43 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-859005700"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-859005700"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-859005700');
+  </script>
 
-  gtag('config', 'AW-859005700');
-</script>
+  <!-- 🔴 Conversion events for this page (fires on user click) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // WhatsApp click -> WhatsappPhuket conversion
+      document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(a => {
+        a.addEventListener('click', function () {
+          gtag('event', 'conversion', { 'send_to': 'AW-859005700/8crhCNnMhaoZEITGzZkD' });
+        });
+      });
+
+      // Phone click -> CallPhuket conversion
+      document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+        a.addEventListener('click', function () {
+          gtag('event', 'conversion', { 'send_to': 'AW-859005700/7fJ9CNzMhaoZEITGzZkD' });
+        });
+      });
+
+      // Email click -> EmailPhuket conversion
+      document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+        a.addEventListener('click', function () {
+          gtag('event', 'conversion', { 'send_to': 'AW-859005700/vwM5CN_MhaoZEITGzZkD' });
+        });
+      });
+    });
+  </script>
+  <!-- (Optional) If you have a dedicated “Thank you / Book now” page,
+       paste this on that page to mark a pageview as a conversion:
+       <script>gtag('event','conversion',{'send_to':'AW-859005700/SPsZCL39_6gZEITGzZkD'});</script>
+  -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,9 +79,7 @@
       align-items: center;
       padding: 20px;
     }
-    .lightbox.active {
-      display: flex;
-    }
+    .lightbox.active { display: flex; }
     .lightbox img {
       max-width: 95%;
       max-height: 95%;
@@ -77,9 +104,7 @@
       line-height: 1;
       transition: background 0.3s;
     }
-    .lightbox-close:hover {
-      background: rgba(255,255,255,0.2);
-    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.2); }
   </style>
   
   <!-- JSON-LD Structured Data -->
@@ -96,10 +121,7 @@
       "priceCurrency": "THB",
       "price": "6000000",
       "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "Organization",
-        "name": "Samui vista"
-      }
+      "seller": { "@type": "Organization", "name": "Samui vista" }
     }
   }
   </script>
@@ -109,51 +131,32 @@
     (function() {
       const params = new URLSearchParams(window.location.search);
       const agent = params.get('agent') || params.get('utm_source') || params.get('ref');
-      if (agent) {
-        localStorage.setItem('agent', agent);
-      }
-      
+      if (agent) { localStorage.setItem('agent', agent); }
       function appendAgent(url) {
         const savedAgent = localStorage.getItem('agent');
         if (!savedAgent) return url;
-        
         try {
           const urlObj = new URL(url, window.location.origin);
-          if (urlObj.protocol === 'tel:' || urlObj.protocol === 'mailto:') {
-            return url;
-          }
-          if (urlObj.hostname === 'wa.me' || urlObj.hostname === 'api.whatsapp.com') {
-            return url;
-          }
+          if (urlObj.protocol === 'tel:' || urlObj.protocol === 'mailto:') return url;
+          if (urlObj.hostname === 'wa.me' || urlObj.hostname === 'api.whatsapp.com') return url;
           urlObj.searchParams.set('agent', savedAgent);
           return urlObj.toString();
-        } catch {
-          return url;
-        }
+        } catch { return url; }
       }
-      
       document.addEventListener('DOMContentLoaded', function() {
         const savedAgent = localStorage.getItem('agent');
-        
         document.querySelectorAll('a').forEach(link => {
-          const href = link.getAttribute('href');
-          if (!href) return;
-          
+          const href = link.getAttribute('href'); if (!href) return;
           if (href.includes('wa.me') || href.includes('whatsapp')) {
             const defaultMsg = encodeURIComponent('Hi, I am interested in Chaweng Seaview Hillside property');
             const agentSuffix = savedAgent ? encodeURIComponent(` (agent=${savedAgent})`) : '';
-            
             if (href.includes('?text=')) {
-              if (savedAgent && !href.includes('agent=')) {
-                link.href = href + agentSuffix;
-              }
-            } else if (!href.includes('?text=')) {
-              link.href = href + '?text=' + defaultMsg + agentSuffix;
-            }
+              if (savedAgent && !href.includes('agent=')) { link.href = href + agentSuffix; }
+            } else if (!href.includes('?text=')) { link.href = href + '?text=' + defaultMsg + agentSuffix; }
           } else if (href.startsWith('mailto:')) {
             if (savedAgent && !href.includes('agent=')) {
-              const separator = href.includes('?') ? '&' : '?';
-              link.href = href + separator + 'subject=' + encodeURIComponent('Chaweng Seaview (agent=' + savedAgent + ')');
+              const sep = href.includes('?') ? '&' : '?';
+              link.href = href + sep + 'subject=' + encodeURIComponent('Chaweng Seaview (agent=' + savedAgent + ')');
             }
           } else if (href.startsWith('/') || href.startsWith('./') || href.includes(window.location.hostname)) {
             link.href = appendAgent(href);
@@ -252,9 +255,7 @@
           <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-4">Why This Land is Special</h2>
           <div class="prose prose-lg text-gray-700 leading-relaxed space-y-4">
             <p class="text-xl text-gray-900 font-semibold">Hillside land with panoramic views in Chaweng is a rare find. Prime location with stunning vistas.</p>
-            
             <p>Located on Chaweng hillside, this elevated plot offers breathtaking panoramic views of both the city and ocean. The gentle slope makes it easy to build, while the prime location puts you in the heart of Koh Samui's most vibrant area.</p>
-            
             <p><strong>Imagine this:</strong> Morning coffee overlooking the sparkling ocean. Daytime city views stretching to the horizon. Evenings watching twinkling lights below and sunset colors above. This isn't just land – it's your elevated lifestyle.</p>
           </div>
         </div>
@@ -291,7 +292,6 @@
                 <div class="text-sm text-gray-600">10, 20, or 30 years long-term lease options</div>
               </div>
             </div>
-
             <div class="flex items-start gap-3 bg-green-50 p-4 rounded-lg">
               <span class="text-green-600 font-bold text-xl">✓</span>
               <div>
@@ -433,23 +433,17 @@
       const lightboxImg = document.getElementById('lightbox-img');
       lightboxImg.src = imageSrc;
       lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Prevent scrolling
+      document.body.style.overflow = 'hidden';
     }
-
     function closeLightbox() {
       const lightbox = document.getElementById('lightbox');
       lightbox.classList.remove('active');
-      document.body.style.overflow = ''; // Restore scrolling
+      document.body.style.overflow = '';
     }
-
-    // Close on ESC key
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeLightbox();
-      }
+      if (e.key === 'Escape') closeLightbox();
     });
   </script>
 
 </body>
 </html>
-
