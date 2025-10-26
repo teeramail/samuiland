@@ -10,35 +10,6 @@
     gtag('config', 'AW-859005700');
   </script>
 
-  <!-- 🔴 Conversion events for this page (fires on user click) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // WhatsApp click -> WhatsappPhuket conversion
-      document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(a => {
-        a.addEventListener('click', function () {
-          gtag('event', 'conversion', { 'send_to': 'AW-859005700/8crhCNnMhaoZEITGzZkD' });
-        });
-      });
-
-      // Phone click -> CallPhuket conversion
-      document.querySelectorAll('a[href^="tel:"]').forEach(a => {
-        a.addEventListener('click', function () {
-          gtag('event', 'conversion', { 'send_to': 'AW-859005700/7fJ9CNzMhaoZEITGzZkD' });
-        });
-      });
-
-      // Email click -> EmailPhuket conversion
-      document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
-        a.addEventListener('click', function () {
-          gtag('event', 'conversion', { 'send_to': 'AW-859005700/vwM5CN_MhaoZEITGzZkD' });
-        });
-      });
-    });
-  </script>
-  <!-- (Optional) If you have a dedicated “Thank you / Book now” page,
-       paste this on that page to mark a pageview as a conversion:
-       <script>gtag('event','conversion',{'send_to':'AW-859005700/SPsZCL39_6gZEITGzZkD'});</script>
-  -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -444,6 +415,9 @@
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
+
+  <!-- Contact Tracking Component with Google Ads Conversion -->
+  <script src="/public/js/contact-tracking.js"></script>
 
 </body>
 </html>
